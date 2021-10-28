@@ -14,6 +14,49 @@
   box-sizing: border-box;
 }
 
+.loadingWrapper {
+  width: 100%;
+  height: 100%;
+  background-color: var(--header-background-color);
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid var(--primary-color);
+  border-color: var(--primary-color) transparent var(--primary-color) transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+.hide {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 body {
   background-color: var(--header-background-color);
 }

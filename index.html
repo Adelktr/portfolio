@@ -9,6 +9,9 @@
     <title>Adel Khiter</title>
 </head>
 <body>
+<div class="loadingWrapper">
+    <div class="lds-dual-ring"></div>
+</div>
 <navbar>
     <div class="logo"><a href="index.html">adlktr</a> <span>.</span></div>
     <ul class="inlineMenu">
@@ -84,5 +87,14 @@
         </div>
     </div>
 </section>
+<script>
+    let lds = document.getElementsByClassName('loadingWrapper')[0]
+    window.onload = fadeOut;
+
+    function fadeOut(){
+        lds.classList.add('hide')
+    }
+
+</script>
 </body>
 </html>
