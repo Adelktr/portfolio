@@ -103,8 +103,10 @@ section {
   background-color: var(--section-background-color);
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding-top: 50px;
+  padding-bottom: 150px;
 
   .aboutMe {
     width: 50%;
@@ -139,7 +141,6 @@ section {
       align-items: center;
       font-family: var(--main-font);
       margin-top: 50px;
-      margin-bottom: 150px;
       .title{
         width: auto;
         font-family: var(--title-font);
@@ -159,5 +160,16 @@ section {
       }
     }
 
+  }
+  .skills{
+    margin-top: 65px;
+    .title{
+      h2{
+        width: auto;
+        font-family: var(--title-font);
+        font-size: 32px;
+        font-weight: normal;
+      }
+    }
   }
 }
