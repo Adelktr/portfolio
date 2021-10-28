@@ -3,8 +3,9 @@
   --title-font: "Bebas Neue", cursive;
   --special-font: "Carattere", cursive;
   --main-font: "Roboto", sans-serif;
-  --primary-color: white;
   --header-background-color: #010101;
+  --section-background-color: floralwhite;
+  --primary-color: #0016B7FF;
 }
 
 * {
@@ -17,6 +18,10 @@ body {
   background-color: var(--header-background-color);
 }
 
+span {
+  color: var(--primary-color);
+}
+
 navbar {
   width: 100%;
   height: 50px;
@@ -24,7 +29,6 @@ navbar {
   justify-content: space-between;
   align-items: center;
   padding: 0 10%;
-  background-image: linear-gradient(to bottom, rgba(0, 7, 56, 0.58), black);
   position: sticky;
 }
 navbar .logo a {
@@ -32,12 +36,11 @@ navbar .logo a {
   font-size: 38px;
   font-weight: bold;
   letter-spacing: 0.06em;
-  color: var(--primary-color);
+  color: var(--section-background-color);
   text-decoration: none;
 }
 navbar .logo span {
   font-family: var(--title-font);
-  color: #001eff;
   font-size: 52px;
 }
 navbar .inlineMenu li {
@@ -46,7 +49,7 @@ navbar .inlineMenu li {
 }
 navbar .inlineMenu li a {
   text-decoration: none;
-  color: var(--primary-color);
+  color: var(--section-background-color);
   font-family: var(--main-font);
 }
 navbar .wrappedMenu {
@@ -68,20 +71,80 @@ header {
 }
 header h1 {
   color: var(--header-background-color);
-  text-shadow: 0 0 25px #001eff;
+  text-shadow: 0 0 25px var(--primary-color);
   font-family: var(--title-font);
   font-size: 9em;
   filter: blur(3px);
   user-select: none;
 }
 header p {
-  color: var(--primary-color);
+  color: var(--section-background-color);
   font-family: var(--special-font);
   font-size: 80px;
   letter-spacing: 0.06em;
   position: absolute;
   text-shadow: 0 0 5px var(--primary-color);
   top: 55%;
+}
+
+section {
+  background-color: var(--section-background-color);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+section .aboutMe {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section .aboutMe .title {
+  display: flex;
+  width: 100%;
+}
+section .aboutMe .title h2 {
+  font-family: var(--title-font);
+  font-size: 46px;
+  color: var(--header-background-color);
+  letter-spacing: 0.06em;
+  position: relative;
+}
+section .aboutMe .title h2 ::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 170px;
+  width: 200px;
+  height: 2px;
+  background: #b9b9b9;
+}
+section .aboutMe .content {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--main-font);
+  margin-top: 50px;
+  margin-bottom: 150px;
+}
+section .aboutMe .content .title {
+  width: auto;
+  font-family: var(--title-font);
+  font-size: 32px;
+}
+section .aboutMe .content .location {
+  color: #b9b9b9;
+  margin-bottom: 35px;
+}
+section .aboutMe .content .decription {
+  text-align: center;
+  font-size: 18px;
+}
+section .aboutMe .content .decription a {
+  text-decoration: none;
+  color: var(--primary-color);
 }
 
 /*# sourceMappingURL=style.css.map */
