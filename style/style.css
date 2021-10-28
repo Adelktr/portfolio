@@ -148,13 +148,51 @@ section .aboutMe .content .decription a {
   color: var(--primary-color);
 }
 section .skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
   margin-top: 65px;
 }
-section .skills .title h2 {
+section .skills .title p {
   width: auto;
   font-family: var(--title-font);
   font-size: 32px;
   font-weight: normal;
+}
+section .skills .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section .skills .content :nth-child(even) {
+  flex-direction: row-reverse;
+}
+section .skills .content .skill {
+  display: flex;
+  box-shadow: 0 10px 20px lightgray;
+  padding: 20px 25px;
+  border-radius: 25px;
+  margin-top: 35px;
+  justify-content: space-between;
+}
+section .skills .content .skill .logo img {
+  width: 125px;
+  height: 125px;
+}
+section .skills .content .skill-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+}
+section .skills .content .skill-description-title {
+  font-family: var(--title-font);
+  font-size: 24px;
+}
+section .skills .content .skill-description-text {
+  font-family: var(--main-font);
 }
 
 /*# sourceMappingURL=style.css.map */
