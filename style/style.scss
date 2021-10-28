@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,300;0,500;0,700;1,400&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Carattere&family=Roboto:ital,wght@0,300;0,500;0,700;1,400&display=swap');
 
 :root {
   --title-font: 'Bebas Neue', cursive;
-  --special-font: 'Shadows Into Light', cursive;
+  --special-font: 'Carattere', cursive;
   --main-font: 'Roboto', sans-serif;
 
   --primary-color: white;
-  --background-color: #010101;
+  --header-background-color: #010101;
 }
 
 *{
@@ -16,7 +16,7 @@
 }
 
 body{
-  background-color: var(--background-color);
+  background-color: var(--header-background-color);
 }
 
 navbar{
@@ -57,5 +57,31 @@ navbar{
       color: white;
       font-size: 32px;
     }
+  }
+}
+
+header{
+  display: flex;
+  width: 100%;
+  height: 60vh;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  h1{
+    color: var(--header-background-color);
+    text-shadow: 0 0 25px #001eff;
+    font-family: var(--title-font);
+    font-size: 9em;
+    filter: blur(3px);
+    user-select: none;
+  }
+  p{
+    color: var(--primary-color);
+    font-family: var(--special-font);
+    font-size: 80px;
+    letter-spacing: 0.06em;
+    position: absolute;
+    text-shadow: 0 0 5px var(--primary-color);
+    top: 55%;
   }
 }
