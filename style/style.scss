@@ -16,6 +16,11 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: var(--header-background-color);
+}
+
 .loadingWrapper{
   width: 100%;
   height: 100%;
@@ -56,11 +61,6 @@
   100% {
     transform: rotate(360deg);
   }
-}
-
-
-body {
-  background-color: var(--header-background-color);
 }
 
 span {
@@ -150,7 +150,7 @@ section {
   padding-top: 50px;
   padding-bottom: 150px;
 
-  .aboutMe {
+  .rubric{
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -169,7 +169,6 @@ section {
           position: absolute;
           content: '';
           top: 50%;
-          left: 170px;
           width: 200px;
           height: 2px;
           background: #b9b9b9;
@@ -199,6 +198,67 @@ section {
           text-decoration: none;
           color: var(--primary-color);
         }
+      }
+
+    }
+    .wrapperDeadpool{
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+      grid-template-rows: repeat(5, 150px);
+      margin-top: 50px;
+
+      .dpHome{
+        grid-column: 1 / 5;
+        grid-row: 1 / 3 ;
+        background-image: url(../images/deadpoolHome.PNG);
+        background-size: cover;
+        box-shadow: 0 10px 20px lightgray;
+      }
+
+      .dpFrise{
+        grid-column: 1 / 3;
+        grid-row: 3 / 5 ;
+        background-image: url(../images/deadpoolFrise.PNG);
+        background-size: cover;
+        box-shadow: 0 10px 20px lightgray;
+      }
+
+      .dpFace{
+        grid-column: 3 / 4;
+        grid-row: 3 / 4 ;
+        background-color: pink;
+        background-image: url(../images/deadpoolFace.PNG);
+        background-size: cover;
+        box-shadow: 0 10px 20px lightgray;
+      }
+
+      .dpFace2{
+        grid-column: 3 / 4;
+        grid-row: 4 / 5 ;
+        background-color: green;
+        background-image: url(../images/deadpoolFace2.PNG);
+        background-size: cover;
+        box-shadow: 0 10px 20px lightgray;
+      }
+
+      .dpPics{
+        grid-column: 4 / 5;
+        grid-row: 3 / 5 ;
+        background-color: purple;
+        background-image: url(../images/deadpoolGaleriePreview.PNG);
+        background-size: cover;
+        box-shadow: 0 10px 20px lightgray;
+      }
+
+      .dpStory{
+        grid-column: 1 / 5;
+        grid-row: 5 / 6 ;
+        background-color: yellow;
+        background-image: url(../images/deadpoolHistoire.PNG);
+        background-size: cover;
+        box-shadow: 0 10px 20px lightgray;
       }
     }
 
