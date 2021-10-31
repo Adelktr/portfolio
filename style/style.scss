@@ -11,6 +11,24 @@
   --primary-color: #0016B7FF;
 }
 
+@mixin small-desktop{
+  @media screen and(max-width: 1200px){
+    @content
+  }
+}
+
+@mixin tablet{
+  @media screen and(max-width: 800px){
+    @content
+  }
+}
+
+@mixin smartphone{
+  @media screen and(max-width: 600px){
+    @content
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -128,6 +146,12 @@ header {
     font-size: 9em;
     filter: blur(3px);
     user-select: none;
+    @include tablet{
+      font-size: 6em;
+    }
+    @include smartphone{
+      font-size: 4em;
+    }
   }
 
   p {
@@ -138,6 +162,12 @@ header {
     position: absolute;
     text-shadow: 0 0 5px var(--primary-color);
     top: 55%;
+    @include tablet{
+      font-size: 64px;
+    }
+    @include smartphone{
+      font-size: 42px;
+    }
   }
 }
 
@@ -161,12 +191,22 @@ section {
     justify-content: center;
     z-index: 120;
     padding: 0 50px;
+    @include smartphone{
+      top: -50px;
+    }
     a{
       margin: 50px 25px;
+      @include smartphone{
+        margin: 25px 15px;
+      }
 
       img{
         width: 50px;
         height: 50px;
+        @include smartphone{
+          width: 30px;
+          height: 30px;
+        }
       }
     }
 
@@ -179,6 +219,12 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include small-desktop{
+      width: 80%;
+    }
+    @include tablet{
+      width: 90%;
+    }
     .title {
       display: flex;
       width: 100%;
@@ -196,6 +242,9 @@ section {
           width: 200px;
           height: 2px;
           background: #b9b9b9;
+          @include smartphone{
+            width: 100px;
+          }
         }
       }
     }
@@ -206,6 +255,9 @@ section {
       align-items: center;
       font-family: var(--main-font);
       margin-top: 50px;
+      @include smartphone{
+        width: 100%;
+      }
       .title{
         width: auto;
         font-family: var(--title-font);
@@ -297,6 +349,12 @@ section {
     align-items: center;
     width: 50%;
     margin-top: 65px;
+    @include small-desktop{
+      width: 80%;
+    }
+    @include tablet{
+      width: 90%;
+    }
     .title{
       p{
         width: auto;
@@ -319,9 +377,19 @@ section {
         border-radius: 25px;
         margin-top: 35px;
         justify-content: space-between;
+        @include smartphone{
+          justify-content: center;
+          padding: 0px;
+        }
+        .logo{
+          @include smartphone{
+            display: none;
+          }
+        }
         .logo img{
           width: 125px;
           height: 125px;
+
         }
         &-description{
           display: flex;
@@ -329,12 +397,19 @@ section {
           align-items: center;
           justify-content: space-evenly;
           width: 80%;
+          padding: 0px 25px;
+          text-align: center;
+          @include smartphone{
+            width: 100%;
+          }
           &-title{
             font-family: var(--title-font);
             font-size: 24px;
+            margin-top: 15px;
           }
           &-text{
             font-family: var(--main-font);
+            margin: 15px 0px;
           }
         }
       }

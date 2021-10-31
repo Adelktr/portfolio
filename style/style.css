@@ -120,6 +120,16 @@ header h1 {
   filter: blur(3px);
   user-select: none;
 }
+@media screen and (max-width: 800px) {
+  header h1 {
+    font-size: 6em;
+  }
+}
+@media screen and (max-width: 600px) {
+  header h1 {
+    font-size: 4em;
+  }
+}
 header p {
   color: var(--section-background-color);
   font-family: var(--special-font);
@@ -128,6 +138,16 @@ header p {
   position: absolute;
   text-shadow: 0 0 5px var(--primary-color);
   top: 55%;
+}
+@media screen and (max-width: 800px) {
+  header p {
+    font-size: 64px;
+  }
+}
+@media screen and (max-width: 600px) {
+  header p {
+    font-size: 42px;
+  }
 }
 
 section {
@@ -151,12 +171,28 @@ section .card {
   z-index: 120;
   padding: 0 50px;
 }
+@media screen and (max-width: 600px) {
+  section .card {
+    top: -50px;
+  }
+}
 section .card a {
   margin: 50px 25px;
+}
+@media screen and (max-width: 600px) {
+  section .card a {
+    margin: 25px 15px;
+  }
 }
 section .card a img {
   width: 50px;
   height: 50px;
+}
+@media screen and (max-width: 600px) {
+  section .card a img {
+    width: 30px;
+    height: 30px;
+  }
 }
 section .contact {
   margin-top: 75px;
@@ -166,6 +202,16 @@ section .rubric {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media screen and (max-width: 1200px) {
+  section .rubric {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 800px) {
+  section .rubric {
+    width: 90%;
+  }
 }
 section .rubric .title {
   display: flex;
@@ -186,6 +232,11 @@ section .rubric .title h2 ::after {
   height: 2px;
   background: #b9b9b9;
 }
+@media screen and (max-width: 600px) {
+  section .rubric .title h2 ::after {
+    width: 100px;
+  }
+}
 section .rubric .content {
   width: 70%;
   display: flex;
@@ -193,6 +244,11 @@ section .rubric .content {
   align-items: center;
   font-family: var(--main-font);
   margin-top: 50px;
+}
+@media screen and (max-width: 600px) {
+  section .rubric .content {
+    width: 100%;
+  }
 }
 section .rubric .content .title {
   width: auto;
@@ -276,6 +332,16 @@ section .skills {
   width: 50%;
   margin-top: 65px;
 }
+@media screen and (max-width: 1200px) {
+  section .skills {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 800px) {
+  section .skills {
+    width: 90%;
+  }
+}
 section .skills .title p {
   width: auto;
   font-family: var(--title-font);
@@ -298,6 +364,17 @@ section .skills .content .skill {
   margin-top: 35px;
   justify-content: space-between;
 }
+@media screen and (max-width: 600px) {
+  section .skills .content .skill {
+    justify-content: center;
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 600px) {
+  section .skills .content .skill .logo {
+    display: none;
+  }
+}
 section .skills .content .skill .logo img {
   width: 125px;
   height: 125px;
@@ -308,13 +385,22 @@ section .skills .content .skill-description {
   align-items: center;
   justify-content: space-evenly;
   width: 80%;
+  padding: 0px 25px;
+  text-align: center;
+}
+@media screen and (max-width: 600px) {
+  section .skills .content .skill-description {
+    width: 100%;
+  }
 }
 section .skills .content .skill-description-title {
   font-family: var(--title-font);
   font-size: 24px;
+  margin-top: 15px;
 }
 section .skills .content .skill-description-text {
   font-family: var(--main-font);
+  margin: 15px 0px;
 }
 
 /*# sourceMappingURL=style.css.map */
