@@ -11,20 +11,20 @@
   --primary-color: #0016B7FF;
 }
 
-@mixin small-desktop{
-  @media screen and(max-width: 1200px){
+@mixin small-desktop {
+  @media screen and(max-width: 1200px) {
     @content
   }
 }
 
-@mixin tablet{
-  @media screen and(max-width: 800px){
+@mixin tablet {
+  @media screen and(max-width: 800px) {
     @content
   }
 }
 
-@mixin smartphone{
-  @media screen and(max-width: 600px){
+@mixin smartphone {
+  @media screen and(max-width: 600px) {
     @content
   }
 }
@@ -37,9 +37,10 @@
 
 body {
   background-color: var(--header-background-color);
+  overflow-x: hidden;
 }
 
-.loadingWrapper{
+.loadingWrapper {
   width: 100%;
   height: 100%;
   background-color: var(--header-background-color);
@@ -50,11 +51,13 @@ body {
   align-items: center;
   opacity: 1;
 }
+
 .lds-dual-ring {
   display: inline-block;
   width: 80px;
   height: 80px;
 }
+
 .lds-dual-ring:after {
   content: " ";
   display: block;
@@ -94,6 +97,9 @@ navbar {
   padding: 0 10%;
   //background-image: linear-gradient(to bottom, rgba(0, 7, 56, 0.58), black);
   position: sticky;
+  @include tablet {
+    padding: 0 5%;
+  }
 
   .logo a {
     font-family: var(--title-font);
@@ -112,6 +118,9 @@ navbar {
   .inlineMenu li {
     display: inline-block;
     margin: 0 25px;
+    @include tablet {
+      display: none;
+    }
 
     a {
       text-decoration: none;
@@ -120,16 +129,102 @@ navbar {
     }
   }
 
-  .wrappedMenu {
-    display: flex;
-    flex-direction: column;
 
-    li a {
-      color: white;
-      font-size: 32px;
+}
+
+.menuBurger {
+  position: fixed;
+  left: 90%;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  z-index: 150;
+  padding-top: 10px;
+  padding-left: 15px;
+  @include smartphone{
+    left: 85%;
+    width: 75%;
+  }
+
+
+
+  .burgerBtn {
+    width: 20px;
+    height: 30px;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-items: center;
+    @media screen and(min-width: 800px) {
+      display: none;
+    }
+
+    div {
+      width: 7px;
+      height: 7px;
+      background-color: var(--primary-color);
+      margin: 2px;
     }
   }
+  .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 80%;
+    ul{
+      list-style: none;
+      li{
+        margin-bottom: 30px;
+
+        a{
+          text-decoration: none;
+          font-family: var(--title-font);
+          color: var(--primary-color);
+          font-size: 48px;
+          font-weight: bold;
+        }
+      }
+
+    }
+
+  }
 }
+
+.slideInLeft{
+  animation: slideInLeft .5s;
+  transform: translateX(-80%);
+  background-color: #fff;
+}
+
+.slideInRight{
+  animation: slideInRight .5s;
+  transform: translateX(0%);
+  background-color: transparent;
+}
+
+@keyframes slideInLeft {
+  0%{
+    background-color: transparent;
+    transform: translateX(0);
+  }
+  100%{
+    background-color: #fff;
+    transform: translateX(-80%);
+  }
+}
+
+@keyframes slideInRight {
+  0%{
+    background-color: #fff;
+    transform: translateX(-80%);
+  }
+  100%{
+    background-color: transparent;
+    transform: translateX(0);
+  }
+}
+
 
 header {
   display: flex;
@@ -146,10 +241,10 @@ header {
     font-size: 9em;
     filter: blur(3px);
     user-select: none;
-    @include tablet{
+    @include tablet {
       font-size: 6em;
     }
-    @include smartphone{
+    @include smartphone {
       font-size: 4em;
     }
   }
@@ -162,10 +257,10 @@ header {
     position: absolute;
     text-shadow: 0 0 5px var(--primary-color);
     top: 55%;
-    @include tablet{
+    @include tablet {
       font-size: 64px;
     }
-    @include smartphone{
+    @include smartphone {
       font-size: 42px;
     }
   }
@@ -181,7 +276,7 @@ section {
   padding-bottom: 150px;
   position: relative;
 
-  .card{
+  .card {
     position: absolute;
     display: flex;
     border-radius: 25px;
@@ -191,19 +286,20 @@ section {
     justify-content: center;
     z-index: 120;
     padding: 0 50px;
-    @include smartphone{
+    @include smartphone {
       top: -50px;
     }
-    a{
+
+    a {
       margin: 50px 25px;
-      @include smartphone{
+      @include smartphone {
         margin: 25px 15px;
       }
 
-      img{
+      img {
         width: 50px;
         height: 50px;
-        @include smartphone{
+        @include smartphone {
           width: 30px;
           height: 30px;
         }
@@ -211,23 +307,27 @@ section {
     }
 
   }
-  .contact{
+
+  .contact {
     margin-top: 75px;
   }
-  .rubric{
+
+  .rubric {
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    @include small-desktop{
+    @include small-desktop {
       width: 80%;
     }
-    @include tablet{
+    @include tablet {
       width: 90%;
     }
+
     .title {
       display: flex;
       width: 100%;
+
       h2 {
         font-family: var(--title-font);
         font-size: 46px;
@@ -242,46 +342,53 @@ section {
           width: 200px;
           height: 2px;
           background: #b9b9b9;
-          @include smartphone{
+          @include smartphone {
             width: 100px;
           }
         }
       }
     }
-    .content{
+
+    .content {
       width: 70%;
       display: flex;
       flex-direction: column;
       align-items: center;
       font-family: var(--main-font);
       margin-top: 50px;
-      @include smartphone{
+      @include smartphone {
         width: 100%;
       }
-      .title{
+
+      .title {
         width: auto;
         font-family: var(--title-font);
         font-size: 32px;
       }
-      .location{
+
+      .location {
         color: #b9b9b9;
         margin-bottom: 35px;
       }
-      .decription{
+
+      .decription {
         text-align: center;
         font-size: 18px;
-        a{
+
+        a {
           text-decoration: none;
           color: var(--primary-color);
         }
-        .email{
+
+        .email {
           font-size: 20px;
           line-height: 50px;
         }
       }
 
     }
-    .wrapperDeadpool{
+
+    .wrapperDeadpool {
       display: grid;
       width: 100%;
       grid-template-columns: repeat(4, 1fr);
@@ -289,52 +396,52 @@ section {
       grid-template-rows: repeat(5, 150px);
       margin-top: 50px;
 
-      .dpHome{
+      .dpHome {
         grid-column: 1 / 5;
-        grid-row: 1 / 3 ;
+        grid-row: 1 / 3;
         background-image: url(../images/deadpoolHome.PNG);
         background-size: cover;
         box-shadow: 0 10px 20px lightgray;
       }
 
-      .dpFrise{
+      .dpFrise {
         grid-column: 1 / 3;
-        grid-row: 3 / 5 ;
+        grid-row: 3 / 5;
         background-image: url(../images/deadpoolFrise.PNG);
         background-size: cover;
         box-shadow: 0 10px 20px lightgray;
       }
 
-      .dpFace{
+      .dpFace {
         grid-column: 3 / 4;
-        grid-row: 3 / 4 ;
+        grid-row: 3 / 4;
         background-color: pink;
         background-image: url(../images/deadpoolFace.PNG);
         background-size: cover;
         box-shadow: 0 10px 20px lightgray;
       }
 
-      .dpFace2{
+      .dpFace2 {
         grid-column: 3 / 4;
-        grid-row: 4 / 5 ;
+        grid-row: 4 / 5;
         background-color: green;
         background-image: url(../images/deadpoolFace2.PNG);
         background-size: cover;
         box-shadow: 0 10px 20px lightgray;
       }
 
-      .dpPics{
+      .dpPics {
         grid-column: 4 / 5;
-        grid-row: 3 / 5 ;
+        grid-row: 3 / 5;
         background-color: purple;
         background-image: url(../images/deadpoolGaleriePreview.PNG);
         background-size: cover;
         box-shadow: 0 10px 20px lightgray;
       }
 
-      .dpStory{
+      .dpStory {
         grid-column: 1 / 5;
-        grid-row: 5 / 6 ;
+        grid-row: 5 / 6;
         background-color: yellow;
         background-image: url(../images/deadpoolHistoire.PNG);
         background-size: cover;
@@ -343,55 +450,63 @@ section {
     }
 
   }
-  .skills{
+
+  .skills {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 50%;
     margin-top: 65px;
-    @include small-desktop{
+    @include small-desktop {
       width: 80%;
     }
-    @include tablet{
+    @include tablet {
       width: 90%;
     }
-    .title{
-      p{
+
+    .title {
+      p {
         width: auto;
         font-family: var(--title-font);
         font-size: 32px;
         font-weight: normal;
       }
     }
-    .content{
+
+    .content {
       display: flex;
       flex-direction: column;
       align-items: center;
-      :nth-child(even){
+
+      :nth-child(even) {
         flex-direction: row-reverse;
       }
-      .skill{
+
+      .skill {
         display: flex;
         box-shadow: 0 10px 20px lightgray;
         padding: 20px 25px;
         border-radius: 25px;
         margin-top: 35px;
         justify-content: space-between;
-        @include smartphone{
+        @include smartphone {
           justify-content: center;
           padding: 0px;
         }
-        .logo{
-          @include smartphone{
+
+        .logo {
+          @include smartphone {
             display: none;
           }
         }
-        .logo img{
+
+        .logo img {
           width: 125px;
           height: 125px;
 
         }
-        &-description{
+
+        &-description {
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -399,15 +514,17 @@ section {
           width: 80%;
           padding: 0px 25px;
           text-align: center;
-          @include smartphone{
+          @include smartphone {
             width: 100%;
           }
-          &-title{
+
+          &-title {
             font-family: var(--title-font);
             font-size: 24px;
             margin-top: 15px;
           }
-          &-text{
+
+          &-text {
             font-family: var(--main-font);
             margin: 15px 0px;
           }

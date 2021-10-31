@@ -16,6 +16,7 @@
 
 body {
   background-color: var(--header-background-color);
+  overflow-x: hidden;
 }
 
 .loadingWrapper {
@@ -74,6 +75,11 @@ navbar {
   padding: 0 10%;
   position: sticky;
 }
+@media screen and (max-width: 800px) {
+  navbar {
+    padding: 0 5%;
+  }
+}
 navbar .logo a {
   font-family: var(--title-font);
   font-size: 38px;
@@ -90,20 +96,105 @@ navbar .inlineMenu li {
   display: inline-block;
   margin: 0 25px;
 }
+@media screen and (max-width: 800px) {
+  navbar .inlineMenu li {
+    display: none;
+  }
+}
 navbar .inlineMenu li a {
   text-decoration: none;
   color: var(--section-background-color);
   font-family: var(--main-font);
 }
-navbar .wrappedMenu {
+
+.menuBurger {
+  position: fixed;
+  left: 90%;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  z-index: 150;
+  padding-top: 10px;
+  padding-left: 15px;
+}
+@media screen and (max-width: 600px) {
+  .menuBurger {
+    left: 85%;
+    width: 75%;
+  }
+}
+.menuBurger .burgerBtn {
+  width: 20px;
+  height: 30px;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  align-items: center;
+}
+@media screen and (min-width: 800px) {
+  .menuBurger .burgerBtn {
+    display: none;
+  }
+}
+.menuBurger .burgerBtn div {
+  width: 7px;
+  height: 7px;
+  background-color: var(--primary-color);
+  margin: 2px;
+}
+.menuBurger .content {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 80%;
 }
-navbar .wrappedMenu li a {
-  color: white;
-  font-size: 32px;
+.menuBurger .content ul {
+  list-style: none;
+}
+.menuBurger .content ul li {
+  margin-bottom: 30px;
+}
+.menuBurger .content ul li a {
+  text-decoration: none;
+  font-family: var(--title-font);
+  color: var(--primary-color);
+  font-size: 48px;
+  font-weight: bold;
 }
 
+.slideInLeft {
+  animation: slideInLeft 0.5s;
+  transform: translateX(-80%);
+  background-color: #fff;
+}
+
+.slideInRight {
+  animation: slideInRight 0.5s;
+  transform: translateX(0%);
+  background-color: transparent;
+}
+
+@keyframes slideInLeft {
+  0% {
+    background-color: transparent;
+    transform: translateX(0);
+  }
+  100% {
+    background-color: #fff;
+    transform: translateX(-80%);
+  }
+}
+@keyframes slideInRight {
+  0% {
+    background-color: #fff;
+    transform: translateX(-80%);
+  }
+  100% {
+    background-color: transparent;
+    transform: translateX(0);
+  }
+}
 header {
   display: flex;
   width: 100%;
