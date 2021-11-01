@@ -395,6 +395,7 @@ section {
       grid-gap: 20px;
       grid-template-rows: repeat(5, 150px);
       margin-top: 50px;
+      margin-bottom: 50px;
 
       .dpHome {
         grid-column: 1 / 5;
@@ -415,7 +416,6 @@ section {
       .dpFace {
         grid-column: 3 / 4;
         grid-row: 3 / 4;
-        background-color: pink;
         background-image: url(../images/deadpoolFace.PNG);
         background-size: cover;
         box-shadow: 0 10px 20px lightgray;
@@ -424,7 +424,6 @@ section {
       .dpFace2 {
         grid-column: 3 / 4;
         grid-row: 4 / 5;
-        background-color: green;
         background-image: url(../images/deadpoolFace2.PNG);
         background-size: cover;
         box-shadow: 0 10px 20px lightgray;
@@ -433,7 +432,6 @@ section {
       .dpPics {
         grid-column: 4 / 5;
         grid-row: 3 / 5;
-        background-color: purple;
         background-image: url(../images/deadpoolGaleriePreview.PNG);
         background-size: cover;
         box-shadow: 0 10px 20px lightgray;
@@ -442,8 +440,72 @@ section {
       .dpStory {
         grid-column: 1 / 5;
         grid-row: 5 / 6;
-        background-color: yellow;
         background-image: url(../images/deadpoolHistoire.PNG);
+        background-size: cover;
+        box-shadow: 0 10px 20px lightgray;
+      }
+    }
+
+    .wrapperIimpact {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+      grid-template-rows: repeat(6, 150px);
+      margin-top: 50px;
+
+      .iimHome {
+        grid-column: 1 / 5;
+        grid-row: 1 / 3;
+        background-image: url(../images/iimHome.PNG);
+        background-size: cover;
+        box-shadow: 0 10px 20px lightgray;
+      }
+
+      .iimWolf {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        background-image: url(../images/iimWolf.PNG);
+        background-size: cover;
+        box-shadow: 0 10px 20px lightgray;
+      }
+
+      .iimLogo {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        background-image: url(../images/iimLogo.PNG);
+        background-size: cover;
+        box-shadow: 0 10px 20px lightgray;
+      }
+
+      .iimSoleil {
+        grid-column: 3 / 4;
+        grid-row: 3 / 4;
+        background-image: url(../images/iimSoleil.PNG);
+        background-size: cover;
+        box-shadow: 0 10px 20px lightgray;
+      }
+
+      .iimMobile {
+        grid-column: 4 / 5;
+        grid-row: 3 / 6;
+        background-image: url(../images/iimMobile.PNG);
+        background-size: cover;
+        box-shadow: 0 10px 20px lightgray;
+      }
+
+      .iimBlog {
+        grid-column: 1 / 4;
+        grid-row: 4 / 6;
+        background-image: url(../images/iimBlog.PNG);
+        background-size: cover;
+        box-shadow: 0 10px 20px lightgray;
+      }
+
+      .iimValeurs {
+        grid-column: 1 / 5;
+        grid-row: 6 / 7;
+        background-image: url(../images/iimValeurs.PNG);
         background-size: cover;
         box-shadow: 0 10px 20px lightgray;
       }
