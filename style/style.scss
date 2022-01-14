@@ -9,6 +9,7 @@
   --section-background-color: floralwhite;
 
   --primary-color: #0016B7FF;
+  --font-color: rgb(0,0,0)
 }
 
 @mixin small-desktop {
@@ -275,13 +276,14 @@ section {
   padding-top: 50px;
   padding-bottom: 150px;
   position: relative;
+  color: var(--font-color);
 
   .card {
     position: absolute;
     display: flex;
     border-radius: 25px;
     background-color: floralwhite;
-    box-shadow: 0px 10px 20px lightgray;
+    box-shadow: 0px 10px 20px rgba(26, 0, 152, 0.85);
     top: -75px;
     justify-content: center;
     z-index: 120;
@@ -331,7 +333,7 @@ section {
       h2 {
         font-family: var(--title-font);
         font-size: 46px;
-        color: var(--header-background-color);
+        color: var(--font-color);
         letter-spacing: 0.06em;
         position: relative;
 
@@ -402,7 +404,7 @@ section {
         grid-row: 1 / 3;
         background-image: url(../images/deadpoolHome.PNG);
         background-size: cover;
-        box-shadow: 0 10px 20px lightgray;
+        box-shadow: 0 10px 20px rgba(211, 211, 211, 0.58);
       }
 
       .dpFrise {
@@ -410,7 +412,7 @@ section {
         grid-row: 3 / 5;
         background-image: url(../images/deadpoolFrise.PNG);
         background-size: cover;
-        box-shadow: 0 10px 20px lightgray;
+        box-shadow: 0 10px 20px rgba(211, 211, 211, 0.58);
       }
 
       .dpFace {
@@ -418,7 +420,7 @@ section {
         grid-row: 3 / 4;
         background-image: url(../images/deadpoolFace.PNG);
         background-size: cover;
-        box-shadow: 0 10px 20px lightgray;
+        box-shadow: 0 10px 20px rgba(211, 211, 211, 0.58);
       }
 
       .dpFace2 {
@@ -426,7 +428,7 @@ section {
         grid-row: 4 / 5;
         background-image: url(../images/deadpoolFace2.PNG);
         background-size: cover;
-        box-shadow: 0 10px 20px lightgray;
+        box-shadow: 0 10px 20px rgba(211, 211, 211, 0.58);
       }
 
       .dpPics {
@@ -434,7 +436,7 @@ section {
         grid-row: 3 / 5;
         background-image: url(../images/deadpoolGaleriePreview.PNG);
         background-size: cover;
-        box-shadow: 0 10px 20px lightgray;
+        box-shadow: 0 10px 20px rgba(211, 211, 211, 0.58);
       }
 
       .dpStory {
@@ -442,7 +444,7 @@ section {
         grid-row: 5 / 6;
         background-image: url(../images/deadpoolHistoire.PNG);
         background-size: cover;
-        box-shadow: 0 10px 20px lightgray;
+        box-shadow: 0 10px 20px rgba(211, 211, 211, 0.58);
       }
     }
 
@@ -459,7 +461,7 @@ section {
         grid-row: 1 / 3;
         background-image: url(../images/iimHome.PNG);
         background-size: cover;
-        box-shadow: 0 10px 20px lightgray;
+        box-shadow: 0 10px 20px rgba(211, 211, 211, 0.58);
       }
 
       .iimWolf {
@@ -467,7 +469,7 @@ section {
         grid-row: 3 / 4;
         background-image: url(../images/iimWolf.PNG);
         background-size: cover;
-        box-shadow: 0 10px 20px lightgray;
+        box-shadow: 0 10px 20px rgba(211, 211, 211, 0.58);
       }
 
       .iimLogo {
@@ -475,7 +477,7 @@ section {
         grid-row: 3 / 4;
         background-image: url(../images/iimLogo.PNG);
         background-size: cover;
-        box-shadow: 0 10px 20px lightgray;
+        box-shadow: 0 10px 20px rgba(211, 211, 211, 0.58);
       }
 
       .iimSoleil {
@@ -483,7 +485,7 @@ section {
         grid-row: 3 / 4;
         background-image: url(../images/iimSoleil.PNG);
         background-size: cover;
-        box-shadow: 0 10px 20px lightgray;
+        box-shadow: 0 10px 20px rgba(211, 211, 211, 0.58);
       }
 
       .iimMobile {
@@ -491,7 +493,7 @@ section {
         grid-row: 3 / 6;
         background-image: url(../images/iimMobile.PNG);
         background-size: cover;
-        box-shadow: 0 10px 20px lightgray;
+        box-shadow: 0 10px 20px rgba(211, 211, 211, 0.58);
       }
 
       .iimBlog {
@@ -499,7 +501,7 @@ section {
         grid-row: 4 / 6;
         background-image: url(../images/iimBlog.PNG);
         background-size: cover;
-        box-shadow: 0 10px 20px lightgray;
+        box-shadow: 0 10px 20px rgba(211, 211, 211, 0.58);
       }
 
       .iimValeurs {
@@ -507,7 +509,7 @@ section {
         grid-row: 6 / 7;
         background-image: url(../images/iimValeurs.PNG);
         background-size: cover;
-        box-shadow: 0 10px 20px lightgray;
+        box-shadow: 0 10px 20px rgba(211, 211, 211, 0.58);
       }
     }
 
@@ -517,7 +519,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 100%;
     margin-top: 65px;
     @include small-desktop {
       width: 80%;
@@ -527,45 +529,54 @@ section {
     }
 
     .title {
-      p {
+      p:nth-of-type(1) {
         width: auto;
         font-family: var(--title-font);
         font-size: 32px;
         font-weight: normal;
       }
+      p:nth-of-type(2){
+        font-family: var(--main-font);
+        text-align: center;
+        color: gray;
+      }
     }
 
     .content {
       display: flex;
-      flex-direction: column;
       align-items: center;
-
-      :nth-child(even) {
-        flex-direction: row-reverse;
+      cursor: grabbing;
+      gap: 50px;
+      margin-left: 500px;
+      @include smartphone {
+        gap: 25px;
       }
 
       .skill {
         display: flex;
-        box-shadow: 0 10px 20px lightgray;
+        box-shadow: 0 10px 20px rgba(26, 0, 152, 0.85);
         padding: 20px 25px;
         border-radius: 25px;
         margin-top: 35px;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        background-color: var(--primary-color);
         @include smartphone {
-          justify-content: center;
-          padding: 0px;
+          width: 40%;
         }
 
-        .logo {
-          @include smartphone {
-            display: none;
-          }
-        }
 
         .logo img {
-          width: 125px;
-          height: 125px;
-
+          width: 100px;
+          height: 100px;
+          user-drag: none;
+          -webkit-user-drag: none;
+          user-select: none;
+          -moz-user-select: none;
+          -webkit-user-select: none;
+          -ms-user-select: none;
         }
 
         &-description {
@@ -578,6 +589,7 @@ section {
           text-align: center;
           @include smartphone {
             width: 100%;
+            padding: 0;
           }
 
           &-title {

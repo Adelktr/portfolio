@@ -76,7 +76,17 @@
         </div>
     </div>
 </section>
-<script type="text/javascript" src="js/script.js"></script>
+<script>
+    let section = document.querySelector("section")
+    let root = document.documentElement;
+
+    document.addEventListener("scroll", () =>{
+        console.log(window.scrollY)
+        newValue = 255-(window.scrollY / 3)
+        section.style.backgroundColor = "rgb("+newValue+","+newValue+","+newValue+")"
+        root.style.setProperty('--font-color', "rgb("+window.scrollY/2+","+window.scrollY/2+","+window.scrollY/2+")");
+    })
+</script>
 
 </body>
 </html>

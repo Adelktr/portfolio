@@ -48,7 +48,7 @@
         <div class="content">
             <p class="title">Hello, I'm&nbsp;<span>Adel</span></p>
             <p class="location">From Paris, France</p>
-            <p class="decription">Currently in second year at IIM - Paris in the Web Development axis, I am getting into the world of work. Passionate about IT since a young age, web development has been a <span>revelation</span><br><br>Want to know more ? <a
+            <p class="decription">Currently in second year at IIM - Paris in the Web Development axis, I am getting into the world of work. Passionate about it since a young age, web development has been a <span>revelation</span><br><br>Want to know more ? <a
                     href="#">Contact me</a>
             </p>
         </div>
@@ -56,41 +56,43 @@
     <div class="skills">
         <div class="title">
             <p>What are my <span>skills</span> ?</p>
+            <p>Grab them !</p>
         </div>
-        <div class="content">
+        <div class="content card-slider">
             <div class="skill">
                 <div class="logo"><img src="images/html.png" alt="html"></div>
                 <div class="skill-description">
                     <div class="skill-description-title">HTML 5</div>
-                    <div class="skill-description-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores corporis dolor ducimus enim eos eveniet, laudantium, magni modi necessitatibus quisquam reiciendis rem repellat sapiente, sint ut voluptate? Dignissimos, nemo.</div>
                 </div>
             </div>
             <div class="skill">
                 <div class="logo"><img src="images/css.png" alt="css"></div>
                 <div class="skill-description">
                     <div class="skill-description-title">CSS 3</div>
-                    <div class="skill-description-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores corporis dolor ducimus enim eos eveniet, laudantium, magni modi necessitatibus quisquam reiciendis rem repellat sapiente, sint ut voluptate? Dignissimos, nemo.</div>
                 </div>
             </div>
             <div class="skill">
                 <div class="logo"><img src="images/js.png" alt="js"></div>
                 <div class="skill-description">
                     <div class="skill-description-title">JavaScript</div>
-                    <div class="skill-description-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores corporis dolor ducimus enim eos eveniet, laudantium, magni modi necessitatibus quisquam reiciendis rem repellat sapiente, sint ut voluptate? Dignissimos, nemo.</div>
                 </div>
             </div>
             <div class="skill">
                 <div class="logo"><img src="images/vue.png" alt="vuejs"></div>
                 <div class="skill-description">
                     <div class="skill-description-title">VueJs</div>
-                    <div class="skill-description-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores corporis dolor ducimus enim eos eveniet, laudantium, magni modi necessitatibus quisquam reiciendis rem repellat sapiente, sint ut voluptate? Dignissimos, nemo.</div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="logo"><img src="images/laravel.png" alt="laravel"></div>
+                <div class="skill-description">
+                    <div class="skill-description-title">Laravel</div>
                 </div>
             </div>
             <div class="skill">
                 <div class="logo"><img src="images/sass.png" alt="sass"></div>
                 <div class="skill-description">
                     <div class="skill-description-title">Sass</div>
-                    <div class="skill-description-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores corporis dolor ducimus enim eos eveniet, laudantium, magni modi necessitatibus quisquam reiciendis rem repellat sapiente, sint ut voluptate? Dignissimos, nemo.</div>
                 </div>
             </div>
         </div>
@@ -105,6 +107,15 @@
         lds.classList.add('hide')
         setTimeout(function(){ lds.style.display = 'none'; }, 500);
     }
+
+    let section = document.querySelector("section")
+    let root = document.documentElement;
+
+    document.addEventListener("scroll", () =>{
+        newValue = 255-(window.scrollY / 2)
+        section.style.backgroundColor = "rgb("+newValue+","+newValue+","+newValue+")"
+        root.style.setProperty('--font-color', "rgb("+window.scrollY/2+","+window.scrollY/2+","+window.scrollY/2+")");
+    })
 
 </script>
 </body>
