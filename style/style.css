@@ -507,6 +507,14 @@ section .skills .content {
   gap: 50px;
   margin-left: 500px;
 }
+@media screen and (max-width: 800px) {
+  section .skills .content {
+    flex-wrap: wrap;
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+  }
+}
 @media screen and (max-width: 600px) {
   section .skills .content {
     gap: 25px;

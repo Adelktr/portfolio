@@ -548,6 +548,12 @@ section {
       cursor: grabbing;
       gap: 50px;
       margin-left: 500px;
+      @include tablet{
+        flex-wrap: wrap;
+        width: 100%;
+        margin-left: 0;
+        justify-content: center;
+      }
       @include smartphone {
         gap: 25px;
       }
